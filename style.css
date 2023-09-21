@@ -1,0 +1,19 @@
+body{
+    padding: 100px 200px;
+    background-image: url("assets\login-page\login.mp4");
+}
+
+#login-form h1{
+    text-align: center;
+}
+
+#take-input{
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px gray;
+    margin: 50px;
+    padding: 40px;
+}
+
+.form-control{
+    border: 1px solid purple;
+}
