@@ -17,3 +17,28 @@ body{
 .form-control{
     border: 1px solid purple;
 }
+
+#home{
+    display: none;
+}
+
+.status{
+    margin: 0px 20px;
+    text-align: center;
+    padding: 20px 0px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.deposit{
+    background-color: rebeccapurple;
+}
+
+.withdraw{
+    background-color: yellowgreen;
+}
+
+.cash{
+    background-color: brown;
+}
