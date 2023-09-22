@@ -13,8 +13,7 @@ button.addEventListener('click', function(){
 //deposit money
 var depositButton = document.getElementById('depositButton')
 depositButton.addEventListener('click', function(){
-    var depositAmount = document.getElementById("addDepositMoney").value;
-    var depositNumber = parseFloat(depositAmount)
+    var depositNumber = getInput("addDepositMoney")
 
     updateValueOfDepositAndCash('depositMoney', depositNumber)
     updateValueOfDepositAndCash('balanceMoney', depositNumber)
@@ -25,12 +24,10 @@ depositButton.addEventListener('click', function(){
 //withdraw cash amount
 var withdrawButton = document.getElementById('withdrawButton')
 withdrawButton.addEventListener('click', function(){
-    var withdrawAmount = document.getElementById("addWithdrawMoney").value;
-    var withdrawNumber = parseFloat(withdrawAmount)
+    var withdrawNumber = getInput("addWithdrawMoney")
     updateValueOfDepositAndCash('withdrawMoney', withdrawNumber);
-
-    
-
+    updateValueOfDepositAndCash('balanceMoney', -1 * withdrawNumber)
+    document.getElementById("addWithdrawMoney").value = "";
 })
 
 function updateValueOfDepositAndCash(id, depositNumber){
@@ -38,4 +35,10 @@ function updateValueOfDepositAndCash(id, depositNumber){
     var currentBalanceNumber = parseFloat(currentBalance)
     var totalBalance = depositNumber + currentBalanceNumber
     document.getElementById(id).innerText = totalBalance
+}
+
+function getInput(id){
+    var amount = document.getElementById(id).value;
+    var number = parseFloat(amount)
+    return number
 }
